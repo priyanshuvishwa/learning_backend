@@ -1,15 +1,7 @@
 import express from "express"
 import connectDB from "./db/index.js"
-// import dotenv from "dotenv"
 import { app } from "./app.js";
 
-console.log("Index.js is running");
-console.log("PORT:", process.env.PORT);
-console.log("Mongo URI exists:", !!process.env.MONGODB_URI);
-
-// dotenv.config({
-//   path: "./.env",
-// });
 
 connectDB()
   .then(() => {
@@ -22,7 +14,7 @@ connectDB()
     const PORT = process.env.PORT || 8000;
 
     app.listen(PORT, () => {
-      console.log(`⚙️ Server is running at port: ${PORT}`);
+      console.log(`Server is running at port: ${PORT}`);
     });
   })
   .catch((error) => {
