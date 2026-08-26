@@ -5,7 +5,6 @@ import { app } from "./app.js";
 
 connectDB()
   .then(() => {
-    
     app.on("error", (error) => {
       console.error("Express app error:", error);
       throw error;

@@ -5,11 +5,9 @@ const connectDB = async() => {                          // IIFE( immedietly invo
         const connectionInstance = await mongoose.connect(
             process.env.MONGODB_URI
         );
-
         console.log(
             `MongoDB connected: ${connectionInstance.connection.host}`
         );
-
     } catch (error) {
         console.log("ERROR :", error );
         throw error

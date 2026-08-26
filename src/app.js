@@ -17,6 +17,7 @@ app.use(express.json({
 
 // Accept URL-encoded form data 
 app.use(express.urlencoded({
+    extended=true,
     limit:"16kb",
 }));
 
