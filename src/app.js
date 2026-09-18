@@ -17,7 +17,7 @@ app.use(express.json({
 
 // Accept URL-encoded form data 
 app.use(express.urlencoded({
-    extended=true,
+    extended:true,
     limit:"16kb",
 }));
 
@@ -26,5 +26,10 @@ app.use(express.static("public"))
 
 // Parse cookie
 app.use(cookieParser())
+
+
+//routes
+import router from './routes/user.router.js'
+app.use('/api/v1/user',router)
 
 export {app}
